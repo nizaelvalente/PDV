@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "name":"Casaco Royal",
+        "size": "M",
+        "stok": 10,
+        "category": "Uniforme"
+    },
+    {
+        "id":2,
+        "name":"Casaco Marinho",
+        "size": "M",
+        "stok": 10,
+        "category": "Uniforme"
+    },
+    {
+        "id":3,
+        "name":"Camisa Polo Royal",
+        "size": "M",
+        "stok": 10,
+        "category": "Uniforme"
+    },
+    {
+        "id":4,
+        "name":"Camisa Polo Marinho",
+        "size": "M",
+        "stok": 10,
+        "category": "Uniforme"
+    }
+]
