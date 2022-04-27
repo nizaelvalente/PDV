@@ -23,9 +23,11 @@ export const update = async (req:Request)=>{
     return response
 }
 export const deleteOne = async (req:Request)=>{
-    return {user: req.params.id}
+    const response = await userModel.deleteOne(req)
+    return response
 }
 
 export const deleteMultiple = async (req:Request)=>{
-    return ('delete multiple user')
+    const response = userModel.deleteMultiple(req)
+    return response
 }

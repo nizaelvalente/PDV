@@ -37,6 +37,24 @@ export = {
         } catch (error) {
             return {status: 400, data:{message:error}}
         }
+    },
+    async deleteOne (req:Request) {
+        try {
+            const response = await db.find((user:any )=> user.id === Number(req.params.id))
+            if(!response) return {status: 408, data:{message:"Usuário não cadastrado."}}
+            return {status: 200, data:response}
+        } catch (error) {
+            return {status: 400, data:{message:error}}
+        }
+    },
+    async deleteMultiple (req:Request) {
+        try {
+            const response =  db
+            if(!response) return {status: 408, data:{message:"Não ha usuário para apagar."}}
+            return {status: 200, data:response}
+        } catch (error) {
+            return {status: 400, data:{message:error}}
+        }
     }
 
 }

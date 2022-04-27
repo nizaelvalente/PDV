@@ -5,6 +5,6 @@ import { deleteOne } from '../../controllers/users/user-controller'
 const deleteOneUser = Router()
 
 export default deleteOneUser.delete('/:id', async (req, res)=>{
-        const response = await deleteOne(req)
-        return res.json(response)
+        const {status, data} = await deleteOne(req)
+        return res.status(status).send(data)
 })
