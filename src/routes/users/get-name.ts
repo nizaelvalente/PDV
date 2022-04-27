@@ -3,7 +3,7 @@ import { getName } from '../../controllers/users/user-controller'
 
 const searchUserByName = Router()
 
-export default searchUserByName.get('/:name', async (req, res)=>{
-        const response = await getName(req)
-        return res.json(response)
+export default searchUserByName.get('/', async (req, res)=>{
+        const {status, data} = await getName(req)
+        return res.status(status).send(data)
 })
