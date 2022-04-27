@@ -18,7 +18,10 @@ export const getName = async (req:Request)=>{
     const response = await userModel.getName(req)
     return response
 }
-
+export const update = async (req:Request)=>{
+    const response = await userModel.update(req)
+    return response
+}
 export const deleteOne = async (req:Request)=>{
     return {user: req.params.id}
 }

@@ -28,6 +28,15 @@ export = {
         } catch (error) {
             return {status: 400, data:{message:error}}
         }
+    },
+    async update (req:Request) {
+        try {
+            const response = await db.find((user:any )=> user.id === Number(req.params.id))
+            if(!response) return {status: 408, data:{message:"Usuário não cadastrado."}}
+            return {status: 200, data:response}
+        } catch (error) {
+            return {status: 400, data:{message:error}}
+        }
     }
 
 }
