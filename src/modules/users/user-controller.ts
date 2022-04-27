@@ -1,4 +1,4 @@
-const db = require ('../../../dev/db/user')
+const db = require ('../../../dev/db/users')
 import {Request} from 'express'
 
 export = {
