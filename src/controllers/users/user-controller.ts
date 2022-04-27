@@ -15,7 +15,8 @@ export const getOne = async (req:Request)=>{
 }
 
 export const getName = async (req:Request)=>{
-    return {user: req.params.name}
+    const response = await userModel.getName(req)
+    return response
 }
 
 export const deleteOne = async (req:Request)=>{

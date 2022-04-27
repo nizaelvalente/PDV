@@ -19,6 +19,15 @@ export = {
         } catch (error) {
             return {status: 400, data:{message:error}}
         }
+    },
+    async getName (req:Request) {
+        try {
+            const response = await db.find((user:any )=> user.name === req.body.name)
+            if(!response) return {status: 408, data:{message:"Usuário não encontrado."}}
+            return {status: 200, data:response}
+        } catch (error) {
+            return {status: 400, data:{message:error}}
+        }
     }
 
 }
