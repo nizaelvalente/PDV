@@ -1,15 +1,17 @@
 import {Request} from 'express'
-
+import userModel from '../../modules/users/user-controller'
 export const create = async (req: Request)=>{
     return req.body
 }
 
 export const listAll = async ()=>{
-    return ("list all users")
+    const response = await userModel.listUser()
+    return response
 }
 
 export const getOne = async (req:Request)=>{
-    return {user: req.params.id}
+    const response = await userModel.getOne(req)
+    return response
 }
 
 export const getName = async (req:Request)=>{

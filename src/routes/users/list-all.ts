@@ -4,10 +4,6 @@ import { listAll } from '../../controllers/users/user-controller'
 const listAllUsers = Router()
 
 export default listAllUsers.get('/', async (req, res)=>{
-    try {
-        const response = await listAll()
-        return res.send(response)
-    } catch (error) {
-        
-    }
+        const {status, data} = await listAll()
+        return res.status(status).send(data)
 })
