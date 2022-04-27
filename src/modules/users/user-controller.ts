@@ -1,5 +1,5 @@
 const db = require ('../../../dev/db/users')
-import {Request} from 'express'
+import e, {Request} from 'express'
 
 export = {
 
@@ -49,10 +49,11 @@ export = {
     },
     async deleteMultiple (req:Request) {
         try {
-            const response  = await req.body.map((id:Number) => db.filter((e:any) => e.id === id))
+            const response  = await req.body.map((id:Number) => db.find((e:any) => e.id === id))
+            const data = response.filter((e:any) => e)
 
-            if(!response[0].length) return {status: 408, data:{message:"Não ha usuário para apagar."}}
-            return {status: 200, data:response[0]}
+            if(!data.length) return {status: 408, data:{message:"Não ha usuário para apagar."}}
+            return {status: 200, data:data}
         } catch (error) {
             return {status: 400, data:{message:error}}
         }
